@@ -23,11 +23,33 @@ def selection_sort(arr):
 
     return arr
 
-
-# TO-DO:  implement the Bubble Sort function below
+# time: O(n^2)
+# space: O(1)
 def bubble_sort(arr):
-    # Your code here
-
+    # no sorting necessary if there is one or less items
+    if len(arr) <= 1:
+        return arr
+    # loop thru arr
+    # for each item, compare that item to the next;
+    # if the next item is smaller, swap the items.
+    # Keep track of whether a swap was performed.
+    # If there was, another iteration is necessary--
+    # if there wasn't, the sort is finished.
+    for i in range(len(arr)):
+        # set a var for storing whether a
+        # swap was performed on this iteration
+        swap_performed = False
+        for j in range(len(arr)):
+            if (len(arr)-1) >= j+1: # <-- ensure we are not at the end of the array
+                if arr[j] > arr[j+1]:
+                    # if the current element is larger
+                    # than the next, swap them
+                    arr[j], arr[j+1] = arr[j+1], arr[j]
+                    swap_performed = True
+        # if no swap was performed on this teration,
+        # break out of the loop and thus end the sort
+        if not swap_performed:
+            break
 
     return arr
 
