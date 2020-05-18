@@ -35,9 +35,13 @@ def bubble_sort(arr):
     # Keep track of whether a swap was performed.
     # If there was, another iteration is necessary--
     # if there wasn't, the sort is finished.
-    for i in range(len(arr) -1):
-        # set a var for storing whether a
-        # swap was performed on this iteration
+    
+    # set a var for storing whether a
+    # swap was performed on this iteration.
+    # Set it to true so while loop starts
+    swap_performed = True
+    while swap_performed:
+        # set back to false
         swap_performed = False
         for j in range(len(arr) -1):
             if arr[j] > arr[j+1]:
@@ -45,10 +49,6 @@ def bubble_sort(arr):
                 # than the next, swap them
                 arr[j], arr[j+1] = arr[j+1], arr[j]
                 swap_performed = True
-        # if no swap was performed on this teration,
-        # break out of the loop and thus end the sort
-        if not swap_performed:
-            break
 
     return arr
 
