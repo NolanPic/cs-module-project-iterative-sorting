@@ -18,13 +18,8 @@ def selection_sort(arr):
         # Next, now that we have the smallest index,
         # we need to swap the item at the current
         # index with this item.
-        # Get the smallest and current values:
-        smallest_val = arr[smallest_index]
-        current_val = arr[cur_index]
         # Swap the values:
-        arr[cur_index] = smallest_val
-        arr[smallest_index] = current_val
-        
+        arr[cur_index], arr[smallest_index] = arr[smallest_index], arr[cur_index]
 
     return arr
 
